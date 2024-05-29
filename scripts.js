@@ -146,12 +146,14 @@ function nextSong() {
 
     currentSong = (currentSong + 1) % songList.length
     playMusic()
+    playBtn.classList.add('pause');
 }
 
 function prevSong() {
 
     currentSong = (currentSong - 1 + songList.length) % songList.length
     playMusic()
+    playBtn.classList.add('pause');
 }
 
 function playMusic() {
