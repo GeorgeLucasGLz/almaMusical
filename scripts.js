@@ -1,3 +1,9 @@
+function loading(){
+    document.getElementsByClassName('load-box')[0].style.display = 'none'
+    document.querySelector('body').style.display = 'flex'
+}
+
+
 const songList = [
     {
         name: "Calm Forest",

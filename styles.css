@@ -19,17 +19,128 @@
     }
 }
 
+@keyframes color {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+@keyframes colorTitle {
+    0% {
+        color: white;
+        text-shadow: 0 0 10px rgb(255, 0, 0);
+    }
+
+    20% {
+        color: rgb(28, 240, 123);
+        text-shadow: 0 0 10px rgb(3, 184, 42);
+    }
+
+    40% {
+        color: rgb(0, 255, 0);
+        text-shadow: 0 0 20px rgb(3, 184, 42);
+    }
+
+    60% {
+        color: #00e4f4;
+        text-shadow: 0 0 10px rgb(4, 0, 245);
+    }
+
+
+    80% {
+        color: #00a8f4;
+        text-shadow: 0 0 20px rgb(4, 0, 245);
+    }
+
+    100% {
+        color: white;
+        text-shadow: 0 0 10px rgb(255, 0, 0);
+    }
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
 body {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
     height: 100vh;
     background-color: rgb(54, 54, 54);
-    background-image: linear-gradient(to top, #e400be, #b404a9, #870591, #5c0377, #35005b);
-    background-image: linear-gradient(to top, #c20be1, #9c05b5, #77028a, #550162, #34003d);
+    background-size: 300% 300%;
+    animation: color 5s ease-in-out infinite;
+    background-image: linear-gradient(45deg, #6c0092, #7500a5, #7d00b9, #8400cd, #8a00e2, #6d3bf0, #4a54f9, #0067ff, #0082ff, #0096ff, #00a8f4, #09b7e7);
 
+
+}
+
+.load-box {
+    z-index: 2;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background: black;
+
+}
+
+.use-fones {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+
+}
+
+.use-fones img {
+    width: 450px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.use-fones p{
+    margin-top: 30px;
+    font-size: 15px;
+    margin-right: 10px;
+    color: white;
+}
+
+
+.loading {
+    margin-right: 15px;
+    animation: loading 1s linear infinite;
+    border: 7px solid rgb(255, 255, 255);
+    border-top: 7px solid transparent;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
 }
 
 .mascara {
@@ -53,6 +164,7 @@ body {
 }
 
 .title {
+    animation: colorTitle 5s infinite;
     z-index: 1;
     color: white;
     font-size: 10px;
@@ -61,12 +173,15 @@ body {
 }
 
 .song-info {
-    box-shadow: 0 0 10px #9e43df;
+
+    box-shadow: 0 0 10px #ffffff;
     background-color: rgb(0, 0, 0);
     margin: 0 15px;
     padding: 15px 15px 5px 150px;
     border-radius: 15px 15px 0 0;
+
 }
+
 
 .song-info .song-name {
     font-size: 18px;
@@ -155,6 +270,7 @@ body {
     color: white;
     background-color: rgb(32, 0, 30);
     box-shadow: 0 0 10px #dfb3ff;
+
 }
 
 .controls #play {
@@ -218,6 +334,35 @@ body {
 
         width: 100%;
 
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .use-fones img {
+        width: 350px;
+    
+    }
+
+    .loading{
+        width: 40px;
+        height: 40px;
+    }
+
+}
+
+
+@media (max-width: 370px) {
+
+    .use-fones img {
+        width: 290px;
+      
+    }
+
+    .loading{
+        width: 30px;
+        height: 30px;
     }
 
 }
