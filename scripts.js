@@ -1,6 +1,6 @@
 function loading(){
     document.getElementsByClassName('load-box')[0].style.display = 'none'
-    document.querySelector('body').style.display = 'flex'
+    document.querySelector('main').style.display = 'flex'
 }
 
 
